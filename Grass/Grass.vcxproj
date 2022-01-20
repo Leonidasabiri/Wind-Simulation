@@ -160,6 +160,7 @@
     <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
     <ClInclude Include="src\GrassBlade.h" />
     <ClInclude Include="src\Matrix.h" />
+    <ClInclude Include="src\Quad.h" />
     <ClInclude Include="src\ShaderCodeParser.h" />
     <ClInclude Include="src\Wind.h" />
     <ClInclude Include="src\windowcontext.h" />
@@ -174,6 +175,7 @@
     <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\GrassBlade.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Quad.cpp" />
     <ClCompile Include="src\ShaderCodeParser.cpp" />
     <ClCompile Include="src\Wind.cpp" />
   </ItemGroup>

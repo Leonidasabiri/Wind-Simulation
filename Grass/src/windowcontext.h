@@ -7,10 +7,13 @@ class Window
 {
 public:
 	GLFWwindow* window;
+	int	_w, _h;
 	Window(const char *title, int width , int height)
 	{
+		_w = width;
+		_h = height;
 		glfwInit();
-		window = glfwCreateWindow(width, height, title, NULL, NULL);
+		window = glfwCreateWindow(_w, _h, title, NULL, NULL);
 		glfwMakeContextCurrent(window);
 		int	gladload = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		if (!gladload)

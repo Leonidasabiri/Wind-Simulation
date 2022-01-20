@@ -4,7 +4,7 @@
 
 GrassBlade::GrassBlade(unsigned int shaderID, float size, float x, float y)
 {
-	this->angle = rand() % 30;
+	this->angle = static_cast<float>(rand())/static_cast<float>(RAND_MAX / 0.8f);
 	this->_size = size;
 	this->_x = x;
 	this->_y = y;
@@ -54,10 +54,10 @@ Segement	GrassBlade::segementrotater(float x1, float y1, float x2, float y2, flo
 	Matrix2x2<float>	mat2x2;
 	Segement	newsegment =
 	{
-		mat2x2.rotation(x1, y1, velocity/y1+y2 + angle).first,
-		mat2x2.rotation(x2, y2, velocity/y1+y2 + angle).second,
-		mat2x2.rotation(x2, y2, velocity/y1+y2 + angle).first,
-		mat2x2.rotation(x2, y2, velocity/y1+y2 + angle).second,
+		mat2x2.rotation(x1, y1, velocity + angle).first,
+		mat2x2.rotation(x1, y1, velocity + angle).second,
+		mat2x2.rotation(x2, y2, velocity + angle).first,
+		mat2x2.rotation(x2, y2, velocity + angle).second,
 	};
 	return newsegment;
 }
@@ -66,15 +66,18 @@ void	GrassBlade::grassSway(float time)
 {
 	Wind				wind(1.0f);
 
-	double r = rand() % 3;
+	double r = rand() % 5;
 	time += r / 10.0f;
-	Seg		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f, wind.velocity)
+	Seg		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f,time * wind.velocity/10.0f)
 	,
-	segment1 = segementrotater(width / 1.9f, height * 5.0f, -width / 1.9f, height * 5.0f, wind.velocity)
+	segment1 = segementrotater(width / 1.9f, height * 5.0f, -width / 1.9f, height * 5.0f,
+		time * wind.velocity / 20.0f)
 	,
-	segment2 = segementrotater(width / 1.77f, height * 3.0f, -width / 1.77f, height * 3.0f, wind.velocity)
+	segment2 = segementrotater(width / 1.77f, height * 3.0f, -width / 1.77f, height * 3.0f, 
+		time * wind.velocity / 40.0f)
 	,
-	segment3 = segementrotater(width / 1.65f, height, -width / 1.65f, height, wind.velocity);
+	segment3 = segementrotater(width / 1.65f, height, -width / 1.65f, height, 
+		time * wind.velocity /80.0f);
 	
 	float	vertices[27] =
 	{
