@@ -72,6 +72,9 @@
     <ClInclude Include="src\Quad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">

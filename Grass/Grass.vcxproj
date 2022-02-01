@@ -162,6 +162,7 @@
     <ClInclude Include="src\Matrix.h" />
     <ClInclude Include="src\Quad.h" />
     <ClInclude Include="src\ShaderCodeParser.h" />
+    <ClInclude Include="src\Vector.h" />
     <ClInclude Include="src\Wind.h" />
     <ClInclude Include="src\windowcontext.h" />
   </ItemGroup>

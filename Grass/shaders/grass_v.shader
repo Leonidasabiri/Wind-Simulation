@@ -5,6 +5,10 @@ layout (location = 1) in vec3 col;
 
 out vec3 color;
 
+uniform mat4	model;
+uniform mat4	view;
+uniform mat4	projection;
+
 uniform float	u_time;
 uniform float	u_mouse;
 uniform float	offsetx;

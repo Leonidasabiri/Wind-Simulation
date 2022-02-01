@@ -17,13 +17,12 @@ int main()
 
 	ShaderParser	grassShader("shaders/grass_v.shader", "shaders/grass_f.shader");
 	ShaderParser	noiseShader("shaders/noise_v.shader", "shaders/noise_f.shader");
-	GrassBlade		*grassblades[700];
+	GrassBlade		*grassblades[700][700];
 	Quad			quad(w, h);
 
-	/*for (size_t i = 0; i < 700; i++)
-	{
-		grassblades[i] = new GrassBlade(grassShader.ShaderID(), 0.3f, -1.2f + (i / 100.0f), -0.7);
-	}*/
+	for (size_t i = 0; i < 200; i++)
+		for (size_t j = 0; j < 20; j++)
+			grassblades[i][j] = new GrassBlade(grassShader.ShaderID(), 0.1f, -1.2f + (j / 100.0f), -0.7 + ( i / 10.0f));
 
 	float width = 0.04f, height = 0.08f;
 	double ftime = glfwGetTime();
@@ -44,12 +43,12 @@ int main()
 		glClearColor(0.1f, 0.01f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		//quad.Render(noiseShader.ShaderID(), {static_cast<float>(h), static_cast<float>(w)}, time);
 		//glUniform1f(glGetUniformLocation(grassShader.ShaderID(), "offsety"), -0.9f);		
-		/*for (size_t i = 0; i < 700; i++)
-		{
-			grassblades[i] -> renderblade(grassShader.ShaderID(), sin(static_cast<float>(time)));
-		}*/
-		quad.Render(noiseShader.ShaderID(), {static_cast<float>(h),static_cast<float>(w)}, time);
+		for (size_t i = 0; i < 200; i++)
+			for (size_t j = 0; j < 20; j++)
+				grassblades[i][j]->renderblade(grassShader.ShaderID(), sin(static_cast<float>(time)));
+		//quad.Render(noiseShader.ShaderID(), {static_cast<float>(h),static_cast<float>(w)}, time);
 		glfwSwapBuffers(win.window);
 		glfwPollEvents();
 	}
