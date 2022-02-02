@@ -5,7 +5,7 @@ template<typename T>
 class Vector3
 {
 private:
-	float	_x, _y, _z;
+	T	_x, _y, _z;
 public:
 	Vector3(float x, float y, float z)
 	{
@@ -23,7 +23,7 @@ template<typename T>
 class Vector2
 {
 private:
-	float	_x, _y;
+	T	_x, _y;
 public:
 	Vector2(float x, float y)
 	{
@@ -39,35 +39,44 @@ public:
 template<typename T>
 Vector3<T> Vector3<T>::operator+(Vector3<T> const& vec)
 {
-	vec._x += _x;
-	vec._y += _y;
-	vec._z += _z;
-	return vec;
+	Vector3<T> res;
+
+	res._x = vec.x + _x;
+	res._y = vec.y + _y;
+	res._z = vec.z + _z;
+	
+	return res;
 }
 
 template<typename T>
 Vector3<T> Vector3<T>::operator-(Vector3<T> const& vec)
 {
-	vec._x -= _x;
-	vec._y -= _y;
-	vec._z -= _z;
-	return vec;
+	Vector3<T> res;
+
+	res._x = vec.x - _x;
+	res._y = vec.y - _y;
+	res._z = vec.z - _z;
+	return res;
 }
 
 template<typename T>
 Vector2<T> Vector2<T>::operator+(Vector2<T> const& vec)
 {
-	vec._x += _x;
-	vec._y += _y;
-	return vec;
+	Vector2<T> res;
+	
+	res._x = vec.x +_x;
+	res._y = vec.y + _y;
+	return res;
 }
 
 template<typename T>
 Vector2<T> Vector2<T>::operator-(Vector2<T> const& vec)
 {
-	vec._x -= _x;
-	vec._y -= _y;
-	return vec;
+	Vector2<T> res;
+
+	res._x = vec.x - _x;
+	res._y = vec.y - _y;
+	return res;
 }
 
 //template<typename T>
