@@ -2,11 +2,12 @@
 #include <GLFW/glfw3.h>
 #include "windowcontext.h"
 #include "ShaderCodeParser.h"
-#include "GrassBlade.h"
+#include "GrassTerrasse.h"
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include "Quad.h"
+#include "Math.h"
 
 int main()
 {
@@ -14,15 +15,11 @@ int main()
 	int	w = 900;
 
 	Window	win("Grass", w, h);
-
 	ShaderParser	grassShader("shaders/grass_v.shader", "shaders/grass_f.shader");
 	ShaderParser	noiseShader("shaders/noise_v.shader", "shaders/noise_f.shader");
-	GrassBlade		*grassblades[700][700];
-	Quad			quad(w, h);
-
-	for (size_t i = 0; i < 200; i++)
-		for (size_t j = 0; j < 20; j++)
-			grassblades[i][j] = new GrassBlade(grassShader.ShaderID(), 0.1f, -1.2f + (j / 100.0f), -0.7 + ( i / 10.0f));
+	Vector2<float>	vec(0.1, 0.1);
+	Quad			quad(vec);
+	GrassTerrasse	grassterrasse(20000, grassShader.ShaderID());
 
 	float width = 0.04f, height = 0.08f;
 	double ftime = glfwGetTime();
@@ -43,11 +40,9 @@ int main()
 		glClearColor(0.1f, 0.01f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		//quad.Render(noiseShader.ShaderID(), {static_cast<float>(h), static_cast<float>(w)}, time);
-		//glUniform1f(glGetUniformLocation(grassShader.ShaderID(), "offsety"), -0.9f);		
-		for (size_t i = 0; i < 200; i++)
-			for (size_t j = 0; j < 20; j++)
-				grassblades[i][j]->renderblade(grassShader.ShaderID(), sin(static_cast<float>(time)));
+		grassterrasse.renderterrasse(static_cast<float>(time));
+		//quad.Render(noiseShader.ShaderID(), vec, time);
+		//glUniform1f(glGetUniformLocation(grassShader.ShaderID(), "offsety"), -0.9f);
 		//quad.Render(noiseShader.ShaderID(), {static_cast<float>(h),static_cast<float>(w)}, time);
 		glfwSwapBuffers(win.window);
 		glfwPollEvents();

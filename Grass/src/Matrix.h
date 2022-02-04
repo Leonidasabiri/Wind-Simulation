@@ -29,20 +29,13 @@ private:
 public:
 	Matrix4x4(Vector3<T> vec3[3]);
 	// Identity Matrix
-	union IdentityMatrix
+	Matrix4x4<T>	IdentityMatrix(Matrix4x4<T> mat4)
 	{
-		int	row1[4],
-			row2[4],
-			row3[4];
-			row4[4];
-	};
-	typedef IdentityMatrix idm = 
-	{
-		1, 0, 0, 0,
-		0, 1, 0, 0,
-		0, 0, 1, 0,
-		0, 0, 0, 1
-	};
+		return	{	1, 0, 0, 0,
+					0, 1, 0, 0,
+					0, 0, 1, 0,
+					0, 0, 0, 1};
+	}
 };
 
 template <typename T>
@@ -98,9 +91,9 @@ void	Matrix3x3<T>::operator * (Matrix3x3<T> const& mat1)
 	{
 		for (size_t j = 0; j < 3; j++)
 		{
-			vec[i].x = _vec3[j]._x * mat1[j]._vec3[j].x + _vec3[i]._y * mat1[j]._vec3[j].y + _vec3[i]._z * mat1[j]._vec3[j].z;
-			vec[i].y = _vec3[i]._x * mat1[j]._vec3[j].x + _vec3[i]._y * mat1[j]._vec3[j].y + _vec3[i]._z * mat1[j]._vec3[j].z;
-			vec[i].z = _vec3[i]._x * mat1[j]._vec3[j].x + _vec3[i]._y * mat1[j]._vec3[j].y + _vec3[i]._z * mat1[j]._vec3[j].z;
+			vec3[i].x = _vec3[j]._x * mat1[j]._vec3[j].x + _vec3[i]._y * mat1[j]._vec3[j].y + _vec3[i]._z * mat1[j]._vec3[j].z;
+			vec3[i].y = _vec3[i]._x * mat1[j]._vec3[j].x + _vec3[i]._y * mat1[j]._vec3[j].y + _vec3[i]._z * mat1[j]._vec3[j].z;
+			vec3[i].z = _vec3[i]._x * mat1[j]._vec3[j].x + _vec3[i]._y * mat1[j]._vec3[j].y + _vec3[i]._z * mat1[j]._vec3[j].z;
 		}
 	}
 }

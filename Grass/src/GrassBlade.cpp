@@ -67,7 +67,7 @@ void	GrassBlade::grassSway(float time)
 	Wind				wind(1.0f);
 
 	double r = rand() % 5;
-	time += r / 10.0f;
+	time = r / 10.0f;
 	Seg		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f,time * wind.velocity/10.0f)
 	,
 	segment1 = segementrotater(width / 1.9f, height * 5.0f, -width / 1.9f, height * 5.0f,
@@ -81,15 +81,15 @@ void	GrassBlade::grassSway(float time)
 	
 	float	vertices[27] =
 	{
-		  segment3.x1 * _size,	segment3.y2 * _size, 0.0f,
-		  segment3.x1* _size,	segment3.y1 * _size, 0.0f,
-		  segment3.x2* _size,	segment3.y2 * _size, 0.0f,
-		  segment3.x2* _size,	segment3.y1 * _size, 0.0f,
-		  segment2.x1* _size,	segment2.y1 * _size, 0.0f,
-		  segment2.x2* _size,	segment2.y2 * _size, 0.0f,
-		  segment1.x1* _size,	segment1.y1 * _size, 0.0f,
-		  segment1.x2* _size,	segment1.y2 * _size, 0.0f,
-		  headSegm.x1* _size,	headSegm.y1 * _size, 0.0f
+			segment3.x1 * _size,	segment3.y2 * _size, 0.0f,
+			segment3.x1 * _size,	segment3.y1 * _size, 0.0f,
+			segment3.x2 * _size,	segment3.y2 * _size, 0.0f,
+			segment3.x2 * _size,	segment3.y1 * _size, 0.0f,
+			segment2.x1 * _size,	segment2.y1 * _size, 0.0f,
+			segment2.x2 * _size,	segment2.y2 * _size, 0.0f,
+			segment1.x1 * _size,	segment1.y1 * _size, 0.0f,
+			segment1.x2 * _size,	segment1.y2 * _size, 0.0f,
+			headSegm.x1 * _size,	headSegm.y1 * _size, 0.0f
 	};
 	int		indecies[21] =
 	{

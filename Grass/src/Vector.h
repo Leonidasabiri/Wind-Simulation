@@ -5,8 +5,8 @@ template<typename T>
 class Vector3
 {
 private:
-	T	_x, _y, _z;
 public:
+	T	_x, _y, _z;
 	Vector3(float x, float y, float z)
 	{
 		_x = x;
@@ -15,25 +15,25 @@ public:
 	}
 	Vector3 operator + (Vector3 const& vec);
 	Vector3 operator - (Vector3 const& vec);
-	Vector3 operator * (Vector3 const& vec1, Vector3 const& vec2);
-	Vector3 operator / ();
+	//Vector3 operator * (Vector3 const& vec1, Vector3 const& vec2);
+	//Vector3 operator / ();
 };
 
 template<typename T>
 class Vector2
 {
 private:
-	T	_x, _y;
 public:
-	Vector2(float x, float y)
+	T	_x, _y;
+	Vector2(T x, T y)
 	{
 		_x = x;
 		_y = y;
 	}
 	Vector2 operator + (Vector2 const& vec);
 	Vector2 operator - (Vector2 const& vec);
-	Vector2 operator * (Vector2 const& vec1, Vector2 const& vec2);
-	Vector2 operator / ();
+	/*Vector2 operator * (Vector2 const& vec1, Vector2 const& vec2);
+	Vector2 operator / ();*/
 };
 
 template<typename T>

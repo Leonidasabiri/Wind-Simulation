@@ -1,25 +1,20 @@
 #pragma once
 #include <glad/glad.h>
-
-typedef struct Vector2
-{
-	float	w, h;
-}Vec2;
+#include <iostream>
+#include "Vector.h"
 
 class Quad
 {
 public:
 	unsigned int VAO, VBO, EBO;
-	int		_w = 0, _h = 0;
-	Quad(int w, int h)
+	Quad(Vector2<float>	vec)
 	{
-		_w = w, _h = h;
 		float	vertices[12] =
 		{
-			-static_cast<float>(_w),  static_cast<float>(_h), 0.0f,
-			 static_cast<float>(_w),  static_cast<float>(_h), 0.0f,
-			-static_cast<float>(_w), -static_cast<float>(_h), 0.0f,
-			 static_cast<float>(_w), -static_cast<float>(_h), 0.0f
+			-vec._x,  vec._y, 0.0f,
+			 vec._x,  vec._y, 0.0f,
+			-vec._x, -vec._y, 0.0f,
+			 vec._x, -vec._y, 0.0f
 		};
 		int		indecies[6] =
 		{
@@ -40,7 +35,7 @@ public:
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr);
 		glEnableVertexAttribArray(0);
 	}
-	void	Render(unsigned int shaderID, Vec2 res, float time);
+	void	Render(unsigned int shaderID, Vector2<float> res, float time);
 private:
 
 };

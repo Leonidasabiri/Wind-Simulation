@@ -159,6 +159,8 @@
     <ClInclude Include="dependencies\imgui\imstb_textedit.h" />
     <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
     <ClInclude Include="src\GrassBlade.h" />
+    <ClInclude Include="src\GrassTerrasse.h" />
+    <ClInclude Include="src\Math.h" />
     <ClInclude Include="src\Matrix.h" />
     <ClInclude Include="src\Quad.h" />
     <ClInclude Include="src\ShaderCodeParser.h" />
@@ -175,6 +177,7 @@
     <ClCompile Include="dependencies\imgui\imgui_tables.cpp" />
     <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\GrassBlade.cpp" />
+    <ClCompile Include="src\GrassTerrasse.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Quad.cpp" />
     <ClCompile Include="src\ShaderCodeParser.cpp" />

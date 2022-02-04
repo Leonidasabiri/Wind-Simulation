@@ -17,5 +17,5 @@ uniform float	offsety;
 void	main()
 {
 	gl_Position = vec4(pos.x + offsetx, pos.y + offsety, pos.z, 1.0);
-	color = vec3(0.0f, 1.0f, 0.0f);
+	color = vec3(0.0f, 1.0f + offsetx, 0.0f);
 }
