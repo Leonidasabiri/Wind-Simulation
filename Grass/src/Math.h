@@ -13,6 +13,6 @@ namespace Math
 	Matrix2x2<T>	matrix2;
 	template<typename T>
 	Matrix3x3<T>	matrix3;
-	template<typename T>
-	Matrix4x4<T>	matrix4;
+	template<typename T, typename T1>
+	Matrix4x4<T, T1>	matrix4;
 }

@@ -19,7 +19,7 @@ int main()
 	ShaderParser	noiseShader("shaders/noise_v.shader", "shaders/noise_f.shader");
 	Vector2<float>	vec(0.1, 0.1);
 	Quad			quad(vec);
-	GrassTerrasse	grassterrasse(20000, grassShader.ShaderID());
+	//GrassTerrasse	grassterrasse(2000, grassShader.ShaderID());
 
 	float width = 0.04f, height = 0.08f;
 	double ftime = glfwGetTime();
@@ -40,7 +40,7 @@ int main()
 		glClearColor(0.1f, 0.01f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		grassterrasse.renderterrasse(static_cast<float>(time));
+		//grassterrasse.renderterrasse(static_cast<float>(time));
 		//quad.Render(noiseShader.ShaderID(), vec, time);
 		//glUniform1f(glGetUniformLocation(grassShader.ShaderID(), "offsety"), -0.9f);
 		//quad.Render(noiseShader.ShaderID(), {static_cast<float>(h),static_cast<float>(w)}, time);
