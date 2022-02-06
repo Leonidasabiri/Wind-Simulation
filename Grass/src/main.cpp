@@ -19,7 +19,7 @@ int main()
 	ShaderParser	noiseShader("shaders/noise_v.shader", "shaders/noise_f.shader");
 	Vector2<float>	vec(0.1, 0.1);
 	Quad			quad(vec);
-	GrassTerrasse	grassterrasse(2000, grassShader.ShaderID());
+	GrassTerrasse	grassterrasse(200, grassShader.ShaderID());
 
 	float width = 0.04f, height = 0.08f;
 	double ftime = glfwGetTime();
