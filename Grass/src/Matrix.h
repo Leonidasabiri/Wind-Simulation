@@ -21,25 +21,25 @@ public:
 	//std::tuple<T, T, T> rotation(T x, T y, T z, T angle);
 };
 
-template<typename T, typename T1>
-class Matrix4x4
-{
-private:
-	int						w = 1;
-public:
-	Vector3<T1>				_matvec3;
-	Matrix4x4(Vector3<T1> matvec3)
-	{
-		_matvec3._x = matvec3._x,
-		_matvec3._y = matvec3._y,
-		_matvec3._x = matvec3._z;
-	}
-	// Identity Matrix
-	void	IdentityMatrix(Vector3<T1> vec3)
-	{
-
-	}
-};
+//template<typename T, typename T1>
+//class Matrix4x4
+//{
+//private:
+//	int						w = 1;
+//public:
+//	Vector3<T1>				_matvec3;
+//	Matrix4x4(Vector3<T1> matvec3)
+//	{
+//		_matvec3._x = matvec3._x,
+//		_matvec3._y = matvec3._y,
+//		_matvec3._x = matvec3._z;
+//	}
+//	 Identity Matrix
+//	void	IdentityMatrix(Vector3<T1> vec3)
+//	{
+//
+//	}
+//};
 
 template <typename T>
 class Matrix2x2
