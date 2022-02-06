@@ -18,28 +18,88 @@ public:
 	// View
 	// Scaling matrix
 	// Rotation
-	//std::tuple<T, T, T> rotation(T x, T y, T z, T angle);
 };
 
-//template<typename T, typename T1>
-//class Matrix4x4
-//{
-//private:
-//	int						w = 1;
-//public:
-//	Vector3<T1>				_matvec3;
-//	Matrix4x4(Vector3<T1> matvec3)
-//	{
-//		_matvec3._x = matvec3._x,
-//		_matvec3._y = matvec3._y,
-//		_matvec3._x = matvec3._z;
-//	}
-//	 Identity Matrix
-//	void	IdentityMatrix(Vector3<T1> vec3)
-//	{
-//
-//	}
-//};
+
+typedef struct ResultingVector
+{
+	int	x, y, z, w;
+};
+
+template<typename T>
+class Matrix4x4
+{
+public:
+	ResultingVector	vector;
+	T	identitymatrix[4][4] =
+	{
+		{1, 0, 0, 0},
+		{0, 1, 0, 0},
+		{0, 0, 1, 0},
+		{0, 0, 0, 1}
+	};
+	T	scalingmatrix[4][4];
+	T	transformmatrix[4][4];
+	/*Matrix4x4<T>(T x, T y, T z, T w)
+	{
+		
+	}*/
+	// Identity Matrix
+	void	IdentityMatrixMultiplication(Vector3<T> vec3)
+	{
+		vec3._x *= identitymatrix[0][0];
+		vec3._y *= identitymatrix[1][1];
+		vec3._z *= identitymatrix[2][2];
+		vector = 
+		{
+				vec3._x,
+				vec3._y,
+				vec3._z,
+				1
+		};
+	}
+	// Scaling
+	void	ScalingMatrixMultiplication(Vector3<T> vec3)
+	{
+		vec3._x *= vector.x;
+		vec3._y *= vector.y;
+		vec3._z *= vector.z;
+		vector =
+		{
+			vec3._x,
+			vec3._y,
+			vec3._z,
+			1
+		};
+	}
+	// Translation
+	void	TranslationMatrixMultiplication(Vector3<T> vec3)
+	{
+		vector.x += vec3._x;
+		vector.y += vec3._y;
+		vector.z += vec3._z;
+	}
+
+	// Rotation
+	// X axis
+	// [1	   0	   0 0]
+	// [0 cos(a) -sin(a) 0]
+	// [0 sin(a)  cos(a) 0]
+ 	// [0	   0	  0	 1]
+	// 
+	// Y axis
+	// [cos(a) 0  sin(a) 0]
+	// [0	   1	  0  0]
+	// [-sin(a)0  cos(a) 0]
+ 	// [0	   0	  0	 1]
+	//
+	// Z axis
+	// [cos(a) -sin(a) 0 0]
+	// [sin(a)  cos(a) 0 0]
+	// [0	   0	   1 0]
+	// [0	   0	   0 1]
+
+};
 
 template <typename T>
 class Matrix2x2

@@ -17,10 +17,12 @@ int main()
 	Window	win("Grass", w, h);
 	ShaderParser	grassShader("shaders/grass_v.shader", "shaders/grass_f.shader");
 	ShaderParser	noiseShader("shaders/noise_v.shader", "shaders/noise_f.shader");
-	Vector2<float>	vec(0.1, 0.1);
-	Quad			quad(vec);
+	Matrix4x4<int>	mat4;
+	Quad			quad(Vector2<float>(0.1, 0.1));
 	GrassTerrasse	grassterrasse(200, grassShader.ShaderID());
 
+	mat4.IdentityMatrixMultiplication(Vector3<int>(1, 2, 3));
+	mat4.TranslationMatrixMultiplication(Vector3<int>(9, 2, 4));
 	float width = 0.04f, height = 0.08f;
 	double ftime = glfwGetTime();
 	int		frames = 0;
@@ -39,6 +41,8 @@ int main()
 		glfwGetCursorPos(win.window, &x, &y);
 		glClearColor(0.1f, 0.01f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		std::cout << "MAT41:" << mat4.vector.x << "\n";
 
 		grassterrasse.renderterrasse(static_cast<float>(time));
 		//quad.Render(noiseShader.ShaderID(), vec, time);

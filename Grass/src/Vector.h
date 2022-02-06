@@ -7,7 +7,7 @@ class Vector3
 private:
 public:
 	T	_x, _y, _z;
-	Vector3(float x, float y, float z)
+	Vector3(T x = 0, T y = 0, T z = 0)
 	{
 		_x = x;
 		_y = y;
