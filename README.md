@@ -1,6 +1,6 @@
 # Grass-Simulation
 
-#[The approach](# the-approach)
+[The approach](# the-approach)
 
 - About the project
 
