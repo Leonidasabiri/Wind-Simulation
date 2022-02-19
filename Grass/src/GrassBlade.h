@@ -21,12 +21,6 @@ public:
 
 	int		segement_numbers = 0;
 	float	bladehead = 0.0f;
-
-	// REMINDER 
-	// THE GRASS SEGMENTS AREN'T GOING TO BE DONE LIKE THIS DUMB ASS !!!!!!!!!!!!!!!!!!!!!!!
-	// YOU SHOULD CALCULATE THE GRAVITY FORCE APPLIED ON EACH GRASS SEGEMENT WITH STIFNESS COEFFICIENT !!!!!!!!
-	// YOU SHOULD HANDLE ROTATIONS FOR EACH FUCKING GRASS SEGMENT !!!!!!!!!!!!!!!!!!!
-	// AND HANDLE GRAVITY FORCE FOR EACH JOINT... USE YOUR FUCKING BRAIN !!!!!!!!!!!!!!!!!!!!!!
 	
 	GrassBlade();
 	GrassBlade(unsigned int shaderID, float size, float x, float y);
