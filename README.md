@@ -1,4 +1,4 @@
-<h1> align="center" Grass-Simulation </h1>
+<h1 align="center"> Grass-Simulation </h1>
 
 # [-The approach](#the-approach)
 
