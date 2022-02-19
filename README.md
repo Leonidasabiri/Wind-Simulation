@@ -1,8 +1,9 @@
 <h1 align="center"> Grass-Simulation </h1>
 
+# [-About the project](#about-the-project)
 # [-The approach](#the-approach)
 
-- About the project
+# about-the-project
 
 This is grass simulation written with c++ and based on the opengl API, it contains grass blades with segments that gets affected by gravity and wind force.
 
