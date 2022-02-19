@@ -1,7 +1,7 @@
 <h1 align="center"> Grass-Simulation </h1>
 
-# [-About the project](#about-the-project)
-# [-The approach](#the-approach)
+## [-About the project](#about-the-project)
+## [-The approach](#the-approach)
 
 # about-the-project
 
