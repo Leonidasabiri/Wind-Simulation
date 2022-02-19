@@ -1,6 +1,4 @@
-<p> align="center"
-# Grass-Simulation
-</p>
+<h1> align="center" Grass-Simulation </h1>
 
 # [-The approach](#the-approach)
 
