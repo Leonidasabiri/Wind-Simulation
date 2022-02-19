@@ -11,4 +11,5 @@ The first thing to do is to create a single grass blade with segments that can r
 ## The segment at the start
 <img src="https://user-images.githubusercontent.com/54768823/149226084-12adf85c-8411-4d1d-9c7b-5dfa3c8a30ca.gif" width=250>
 
-# Using noise for winds
+## Using noise for winds
+To make the grass swaying look like it's been affected by actual wind, using generated shader noise is perfect approach for that, i tried getting the x and y value from the noise to affect each grass blade on it's own, the grass terrass is rendered using GPU instancing to save memory and to hold performance even if the grass blades are more than 200000 blade.
