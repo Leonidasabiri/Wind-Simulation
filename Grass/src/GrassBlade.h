@@ -23,6 +23,8 @@ public:
 	int		segement_numbers = 0;
 	float	bladehead = 0.0f;
 
+
+	
 	GrassBlade();
 	GrassBlade(unsigned int shaderID, float size, float x, float y);
 	void	renderblade(unsigned int shaderID, float time);
