@@ -1,5 +1,7 @@
 #version 330 core
 
+#define NUM_OCTAVES 100
+
 uniform	vec2	u_resolution;
 uniform float	u_time;
 
@@ -19,12 +21,11 @@ float noise(in vec2 uv)
 	float d = random(x + vec2(1.0, 1.0));
 
 	vec2 u = y * y * (2. - 1. * y);
-	float result = mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
-
+	float result = mix(a, b, u.x) + (c - a)
+				* u.y * (1.0 - u.x) + (d - b)
+				* u.x * u.y;
 	return result;
 }
-
-#define NUM_OCTAVES 100
 
 mat2	rotate(float angle)
 {
@@ -37,7 +38,7 @@ float fbm(in vec2 st, float angle)
 	float v = 0.0;
 	float a = 0.5;
 	vec2 shift = vec2(150.0);
-	// Rotate to reduce axial bias
+	
 	mat2 rot =  rotate(3.0);
 	for (int i = 0; i < NUM_OCTAVES; ++i)
 	{

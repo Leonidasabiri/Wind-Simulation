@@ -11,10 +11,10 @@ public:
 	{
 		float	vertices[12] =
 		{
-			-vec._x,  vec._y, 0.0f,
-			 vec._x,  vec._y, 0.0f,
-			-vec._x, -vec._y, 0.0f,
-			 vec._x, -vec._y, 0.0f
+			-vec._x / 10.0f,  vec._y / 10.0f, 0.0f,
+			 vec._x / 10.0f,  vec._y / 10.0f, 0.0f,
+			-vec._x / 10.0f, -vec._y / 10.0f, 0.0f,
+			 vec._x / 10.0f, -vec._y / 10.0f, 0.0f
 		};
 		int		indecies[6] =
 		{

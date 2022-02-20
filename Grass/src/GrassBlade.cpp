@@ -4,7 +4,8 @@
 
 GrassBlade::GrassBlade(unsigned int shaderID, float size, float x, float y)
 {
-	this->angle = static_cast<float>(rand())/static_cast<float>(RAND_MAX / 0.8f);
+	//this->angle = static_cast<float>(rand())/static_cast<float>(RAND_MAX / 10.8f);
+	this->angle = 20.0f;
 	this->_size = size;
 	this->_x = x;
 	this->_y = y;
@@ -67,17 +68,17 @@ void	GrassBlade::grassSway(float time)
 	Wind				wind(1.0f);
 
 	double r = rand() % 5;
-	time = r / 10.0f;
-	Seg		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f,time * wind.velocity/10.0f)
+
+	Seg		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f, wind.velocity/10.0f)
 	,
 	segment1 = segementrotater(width / 1.9f, height * 5.0f, -width / 1.9f, height * 5.0f,
-		time * wind.velocity / 20.0f)
+		wind.velocity / 20.0f)
 	,
 	segment2 = segementrotater(width / 1.77f, height * 3.0f, -width / 1.77f, height * 3.0f, 
-		time * wind.velocity / 40.0f)
+		wind.velocity / 40.0f)
 	,
 	segment3 = segementrotater(width / 1.65f, height, -width / 1.65f, height, 
-		time * wind.velocity /80.0f);
+		wind.velocity /80.0f);
 	
 	float	vertices[27] =
 	{
@@ -116,10 +117,10 @@ void	GrassBlade::grassSway(float time)
 void	GrassBlade::renderblade(unsigned int shaderID, float time)
 {
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-	glUniform1f(glGetUniformLocation(shaderID, "offsety"), _y);
-	glUniform1f(glGetUniformLocation(shaderID, "offsetx"), _x);
 	glUseProgram(shaderID);
-	glDrawElements(GL_TRIANGLES, 21, GL_UNSIGNED_INT, 0);
+	std::string t("offsets[" + std::to_string(0) + "]");
+	glUniform2f(glGetUniformLocation(shaderID, t.c_str()), -0.8, -0.3);
+	glBindVertexArray(VAO);
+	glDrawElementsInstanced(GL_TRIANGLES, 21, GL_UNSIGNED_INT, 0, 3600);
 	grassSway(time);
 }
-

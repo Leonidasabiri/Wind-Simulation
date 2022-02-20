@@ -20,12 +20,31 @@ public:
 };
 
 template<typename T>
+class Vector4
+{
+private:
+public:
+	T	_x, _y, _z, _w;
+	Vector4(T x = 0, T y = 0, T z = 0, T w = 0)
+	{
+		_x = x;
+		_y = y;
+		_z = z;
+		_w = w;
+	}
+	Vector4 operator + (Vector4 const& vec);
+	Vector4 operator - (Vector4 const& vec);
+	//Vector3 operator * (Vector3 const& vec1, Vector3 const& vec2);
+	//Vector3 operator / ();
+};
+
+template<typename T>
 class Vector2
 {
 private:
 public:
 	T	_x, _y;
-	Vector2(T x, T y)
+	Vector2(T x = 0, T y = 0)
 	{
 		_x = x;
 		_y = y;

@@ -11,4 +11,5 @@ public:
 	float	velocity = 0.0f;
 	
 	Wind(float _velocity);
+	void	applyingNoise(float x, float y);
 };

@@ -31,19 +31,20 @@ class Matrix4x4
 {
 public:
 	ResultingVector	vector;
+	T	diagonalvalue;
 	T	identitymatrix[4][4] =
 	{
-		{1, 0, 0, 0},
-		{0, 1, 0, 0},
-		{0, 0, 1, 0},
-		{0, 0, 0, 1}
+		{ diagonalvalue, 0, 0, 0 },
+		{ 0, diagonalvalue, 0, 0 },
+		{ 0, 0, diagonalvalue, 0 },
+		{ 0, 0, 0, diagonalvalue }
 	};
 	T	scalingmatrix[4][4];
 	T	transformmatrix[4][4];
-	/*Matrix4x4<T>(T x, T y, T z, T w)
+	Matrix4x4<T>(T diagonalvalue)
 	{
-		
-	}*/
+		this->diagonalvalue = diagonalvalue;
+	}
 	// Identity Matrix
 	void	IdentityMatrixMultiplication(Vector3<T> vec3)
 	{

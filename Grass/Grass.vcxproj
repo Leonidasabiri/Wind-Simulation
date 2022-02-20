@@ -160,6 +160,7 @@
     <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
     <ClInclude Include="src\GrassBlade.h" />
     <ClInclude Include="src\GrassTerrasse.h" />
+    <ClInclude Include="src\GUIEditor.h" />
     <ClInclude Include="src\Math.h" />
     <ClInclude Include="src\Matrix.h" />
     <ClInclude Include="src\Quad.h" />
