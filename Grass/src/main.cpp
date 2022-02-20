@@ -22,23 +22,39 @@ int main()
 	double ftime = glfwGetTime();
 	int		frames = 0;
 
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO();
+	ImGui_ImplOpenGL3_Init("#version 330");
+	ImGui_ImplGlfw_InitForOpenGL(win.window, true);
+	ImGui::StyleColorsDark();
+
 	// Render Loop	
 	while (!glfwWindowShouldClose(win.window))
 	{
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
+
 		double time = glfwGetTime();
 		frames++;
 		if (time - ftime >= 1.0f)
 		{
-			std::cout << frames << " fps\n";
 			frames = 0;
 			ftime = time;
 		}
 		double x, y;
-		glfwGetCursorPos(win.window, &x, &y);
+
+		ImGui::Begin("FPS");
+		ImGui::Text(std::string(std::to_string(frames)).c_str());
+		ImGui::End();
+
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-		quad.Render(noiseShader.ShaderID(), Vector2<float>(3, 3), 20);
-		//grassterrasse.renderterrasse(static_cast<float>(time));
+		//quad.Render(noiseShader.ShaderID(), Vector2<float>(3, 3), time);
+		grassterrasse.renderterrasse(static_cast<float>(time));
+		ImGui::Render();
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		glfwGetCursorPos(win.window, &x, &y);
 		glfwSwapBuffers(win.window);
 		glfwPollEvents();
 	}

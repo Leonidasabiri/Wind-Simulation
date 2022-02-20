@@ -5,9 +5,10 @@
 class GrassTerrasse
 {
 private:
+	unsigned int		instanceVBO = 0;
 	int					_shaderID;
 	int					_grassbladesnumber = 0;
-	Vector2<float>		vec[4800];
+	Vector2<float>		vec[20000];
 	GrassBlade			*grassblades;
 public:
 	GrassTerrasse();

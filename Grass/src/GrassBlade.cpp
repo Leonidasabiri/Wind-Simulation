@@ -46,6 +46,7 @@ GrassBlade::GrassBlade(unsigned int shaderID, float size, float x, float y)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr);
 	glEnableVertexAttribArray(0);
 
+
 	//	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 6, (void*)(sizeof(float) * 3));
 	//	glEnableVertexAttribArray(1);
 }
@@ -118,8 +119,6 @@ void	GrassBlade::renderblade(unsigned int shaderID, float time)
 {
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glUseProgram(shaderID);
-	std::string t("offsets[" + std::to_string(0) + "]");
-	glUniform2f(glGetUniformLocation(shaderID, t.c_str()), -0.8, -0.3);
 	glBindVertexArray(VAO);
 	glDrawElementsInstanced(GL_TRIANGLES, 21, GL_UNSIGNED_INT, 0, 3600);
 	grassSway(time);
