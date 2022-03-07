@@ -38,7 +38,40 @@ The first thing to do is to create a single grass blade with segments that can r
 		6, 7, 8
 	};
 ```
-
+- Here i set the struct of the segement to have more flexibility over the rotation and deformation:
+```c++
+	typedef struct Segement
+	{
+		float	x1;
+		float	y1;
+		float	x2;
+		float	y2;
+		float	density;
+	}Seg;
+```
+- And i used the following rotation matrix implementation in Matrix.h header file:
+```c++
+template <typename T>
+std::pair<T, T>	Matrix2x2<T>::rotation(T x, T y, T angle)
+{
+	return std::make_pair  ( (x * cos(angle)) - (y * sin(angle)) ,
+							 (x * sin(angle)) + (y * cos(angle)) );
+}
+```
+- Applying the rotation on the segments
+```c++
+Segement	GrassBlade::segementrotater(float x1, float y1, float x2, float y2, float velocity)
+{
+	Matrix2x2<float>	mat2x2;
+	Segement	newsegment =
+	{
+		mat2x2.rotation(x1, y1, velocity + angle).first,
+		mat2x2.rotation(x1, y1, velocity + angle).second,
+		mat2x2.rotation(x2, y2, velocity + angle).first,
+		mat2x2.rotation(x2, y2, velocity + angle).second,
+	};
+	return newsegment;
+}```
 ## The segment at the start
 <img src="https://user-images.githubusercontent.com/54768823/149226084-12adf85c-8411-4d1d-9c7b-5dfa3c8a30ca.gif" width=250>
 
