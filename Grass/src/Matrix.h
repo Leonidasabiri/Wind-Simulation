@@ -126,6 +126,7 @@ void	Matrix3x3<T>::operator - (Matrix3x3<T> const& mat1)
 	}
 }
 
+// Finish this
 template<typename T>
 void	Matrix3x3<T>::operator * (Matrix3x3<T> const& mat1)
 {
