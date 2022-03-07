@@ -13,6 +13,7 @@ public:
 		_w = width;
 		_h = height;
 		glfwInit();
+		glfwWindowHint(GLFW_SAMPLES, 4);
 		window = glfwCreateWindow(_w, _h, title, NULL, NULL);
 		glfwMakeContextCurrent(window);
 		int	gladload = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);

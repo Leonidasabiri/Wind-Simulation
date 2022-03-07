@@ -1,6 +1,5 @@
 #version 330 core
-
-#define NUM_OCTAVES 100
+#define NUM_OCTAVES 200
 
 uniform	vec2	u_resolution;
 uniform float	u_time;

@@ -84,6 +84,9 @@
     <ClInclude Include="src\GUIEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\WireframePlane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">

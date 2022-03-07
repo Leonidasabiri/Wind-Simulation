@@ -6,3 +6,14 @@ Wind::Wind(float _velocity)
 {
 	this->velocity = _velocity;
 }
+
+void	Wind::applyingNoise(float x, float y)
+{
+	static	float	v;
+	velocity = v;
+	ImGui::Begin("Wind Parameters:");
+	ImGui::SliderFloat("Velocity", &v, 0, 10);
+	ImGuiCond_FirstUseEver;
+
+	ImGui::End();
+}

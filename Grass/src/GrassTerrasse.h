@@ -8,7 +8,7 @@ private:
 	unsigned int		instanceVBO = 0;
 	int					_shaderID;
 	int					_grassbladesnumber = 0;
-	Vector2<float>		vec[20000];
+	Vector2<float>		*vec = new Vector2<float>[400000];
 	GrassBlade			*grassblades;
 public:
 	GrassTerrasse();

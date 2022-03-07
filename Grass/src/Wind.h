@@ -1,4 +1,5 @@
 #pragma once
+#include "GUIEditor.h"
 
 typedef struct velocity
 {

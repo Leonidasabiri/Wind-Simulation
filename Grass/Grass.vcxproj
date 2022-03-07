@@ -168,6 +168,7 @@
     <ClInclude Include="src\Vector.h" />
     <ClInclude Include="src\Wind.h" />
     <ClInclude Include="src\windowcontext.h" />
+    <ClInclude Include="src\WireframePlane.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dependencies\glad\src\glad.c" />

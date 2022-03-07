@@ -7,8 +7,10 @@ class Quad
 {
 public:
 	unsigned int VAO, VBO, EBO;
-	Quad(Vector2<float>	vec)
+	unsigned int _shader;
+	Quad(Vector2<float> vec, unsigned int shader)
 	{
+		_shader = shader;
 		float	vertices[12] =
 		{
 			-vec._x / 10.0f,  vec._y / 10.0f, 0.0f,
@@ -35,7 +37,7 @@ public:
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr);
 		glEnableVertexAttribArray(0);
 	}
-	void	Render(unsigned int shaderID, Vector2<float> res, float time);
+	void	Render(float time);
 private:
 
 };

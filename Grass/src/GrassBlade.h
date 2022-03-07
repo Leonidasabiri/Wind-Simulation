@@ -2,6 +2,7 @@
 #include <glad/glad.h>
 #include "ShaderCodeParser.h"
 #include "Math.h"
+#include "GUIEditor.h"
 
 typedef struct Segement
 {
@@ -22,13 +23,11 @@ public:
 
 	int		segement_numbers = 0;
 	float	bladehead = 0.0f;
-
-
 	
 	GrassBlade();
 	GrassBlade(unsigned int shaderID, float size, float x, float y);
-	void	renderblade(unsigned int shaderID, float time);
-	void	grassSway(float time);
+	void		renderblade(unsigned int shaderID, float time);
+	void		grassSway(float time);
 	Segement	segementrotater(float x1, float y1, float x2, float y2, float velocity);
 //	~GrassBlade();
 };

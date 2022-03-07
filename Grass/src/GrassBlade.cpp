@@ -4,12 +4,12 @@
 
 GrassBlade::GrassBlade(unsigned int shaderID, float size, float x, float y)
 {
-	//this->angle = static_cast<float>(rand())/static_cast<float>(RAND_MAX / 10.8f);
-	this->angle = 20.0f;
+	this->angle = static_cast<float>(rand())/static_cast<float>(RAND_MAX / 10.8f);
+	//this->angle = 20.0f;
 	this->_size = size;
 	this->_x = x;
 	this->_y = y;
-	
+
 	float	vertices[27] =
 	{
 		 width * size - 0.02f, -height * size,	 0.0f,
@@ -46,7 +46,6 @@ GrassBlade::GrassBlade(unsigned int shaderID, float size, float x, float y)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, nullptr);
 	glEnableVertexAttribArray(0);
 
-
 	//	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 6, (void*)(sizeof(float) * 3));
 	//	glEnableVertexAttribArray(1);
 }
@@ -68,7 +67,10 @@ void	GrassBlade::grassSway(float time)
 {
 	Wind				wind(1.0f);
 
+	wind.applyingNoise(0, 0);
+
 	double r = rand() % 5;
+	wind.velocity *= r;
 
 	Seg		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f, wind.velocity/10.0f)
 	,
@@ -118,6 +120,12 @@ void	GrassBlade::grassSway(float time)
 void	GrassBlade::renderblade(unsigned int shaderID, float time)
 {
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	ImGui::Begin("Grass Parameters");
+	ImGui::SliderFloat("Size:", &_size, -0.09f, 1.5f);
+	ImGui::End();
+	glUniform2f(glGetUniformLocation(shaderID, "u_resolution"), 500, 500);
+	glUniform1f(glGetUniformLocation(shaderID, "angle"), angle);
+	glUniform1f(glGetUniformLocation(shaderID, "u_time"), time * 2);
 	glUseProgram(shaderID);
 	glBindVertexArray(VAO);
 	glDrawElementsInstanced(GL_TRIANGLES, 21, GL_UNSIGNED_INT, 0, 3600);
