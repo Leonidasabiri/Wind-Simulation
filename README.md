@@ -58,7 +58,7 @@ std::pair<T, T>	Matrix2x2<T>::rotation(T x, T y, T angle)
 							 (x * sin(angle)) + (y * cos(angle)) );
 }
 ```
-- Applying the rotation on the segments
+- Applying the rotation on the segments:
 ```c++
 Segement	GrassBlade::segementrotater(float x1, float y1, float x2, float y2, float velocity)
 {
@@ -71,7 +71,9 @@ Segement	GrassBlade::segementrotater(float x1, float y1, float x2, float y2, flo
 		mat2x2.rotation(x2, y2, velocity + angle).second,
 	};
 	return newsegment;
-}```
+}
+```
+
 ## The segment at the start
 <img src="https://user-images.githubusercontent.com/54768823/149226084-12adf85c-8411-4d1d-9c7b-5dfa3c8a30ca.gif" width=250>
 
