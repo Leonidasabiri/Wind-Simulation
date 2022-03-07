@@ -13,6 +13,32 @@ This is grass simulation written with c++ and based on the opengl API, it contai
 
 The first thing to do is to create a single grass blade with segments that can rotate using a simple rotation matrix, having that single grass blade work kinda made the rest of the process on how to code this simulation clear enough to experiment some ideas, .. to make things simple and keep track of what i will be doing i went with 2D first.
 
+- The segements where made and updated with the following array of vertices (the number of vertices isn't set yet to add more details to the grass blade) and indecies:
+```c++
+	float	vertices[27] =
+	{
+			segment3.x1 * _size,	segment3.y2 * _size, 0.0f,
+			segment3.x1 * _size,	segment3.y1 * _size, 0.0f,
+			segment3.x2 * _size,	segment3.y2 * _size, 0.0f,
+			segment3.x2 * _size,	segment3.y1 * _size, 0.0f,
+			segment2.x1 * _size,	segment2.y1 * _size, 0.0f,
+			segment2.x2 * _size,	segment2.y2 * _size, 0.0f,
+			segment1.x1 * _size,	segment1.y1 * _size, 0.0f,
+			segment1.x2 * _size,	segment1.y2 * _size, 0.0f,
+			headSegm.x1 * _size,	headSegm.y1 * _size, 0.0f
+	};
+	int		indecies[21] =
+	{
+		0, 2, 1,
+		1, 3, 2,
+		1, 3, 4,
+		3, 4, 5,
+		4, 5, 6,
+		5, 6, 7,
+		6, 7, 8
+	};
+```
+
 ## The segment at the start
 <img src="https://user-images.githubusercontent.com/54768823/149226084-12adf85c-8411-4d1d-9c7b-5dfa3c8a30ca.gif" width=250>
 
