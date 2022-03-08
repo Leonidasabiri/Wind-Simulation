@@ -131,4 +131,4 @@ float fbm(in vec2 st, float angle)
 	return v;
 }
 ```
-Thanks to the book of shaders i knew how to make this.
+(Thanks to the book of shaders i knew how to make the noise.)
