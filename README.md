@@ -120,7 +120,7 @@ float fbm(in vec2 st, float angle)
 	float v = 0.0;
 	float a = 0.5;
 	vec2 shift = vec2(150.0);
-	// Rotate to reduce axial bias
+	
 	mat2 rot =  rotate(3.0);
 	for (int i = 0; i < NUM_OCTAVES; ++i)
 	{
