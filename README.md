@@ -1,7 +1,12 @@
 <h1 align="center"> Grass-Simulation </h1>
 
 # Still Under developement
-
+## To do:
+	- Implement perspective projection matrix
+	- Add blending and depth testing
+	- Add multitherading for rendering
+	- Add compute shader for parallel cpu/gpu computing
+	- Cubemaps for skybox after transforming stuff to 3D 
 ## [-About the project](#about-the-project)
 ## [-The approach](#the-approach)
 
