@@ -1,4 +1,4 @@
-<h1 align="center"> Grass-Simulation </h1>
+<h1 align="center"> Wind-Simulation </h1>
 
 # Still Under developement
 ## To do:
@@ -12,7 +12,7 @@
 
 # about-the-project
 
-This is grass simulation written with c++ and based on the opengl API, it contains grass blades with segments that gets affected by gravity and wind force.
+This is a grass simulation written with c++ and based on the opengl API, it contains grass blades with segments that gets affected by gravity and wind force.
 
 # the-approach
 
