@@ -17,12 +17,11 @@ int main()
 	ShaderParser	noiseShader("shaders/noise_v.shader", "shaders/noise_f.shader");
 	Quad			quad(Vector2<float>(13, 13), noiseShader.ShaderID());
 	GrassTerrasse	grassterrasse(100, grassShader.ShaderID());
-	
+
 	float width = 0.04f, height = 0.08f;
 	double ftime = glfwGetTime();
 	int		frames = 0;
 
-	//GUIEditor		guieditor(win);
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO();
 	ImGui_ImplOpenGL3_Init("#version 330");

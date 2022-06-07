@@ -10,7 +10,7 @@ public:
 	unsigned int _shader;
 	Quad(Vector2<float> vec, unsigned int shader)
 	{
-		_shader = shader;
+		this->_shader = shader;
 		float	vertices[12] =
 		{
 			-vec._x / 10.0f,  vec._y / 10.0f, 0.0f,
@@ -38,6 +38,4 @@ public:
 		glEnableVertexAttribArray(0);
 	}
 	void	Render(float time);
-private:
-
 };

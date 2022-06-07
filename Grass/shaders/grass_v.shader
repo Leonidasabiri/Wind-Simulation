@@ -44,13 +44,13 @@ float noise(in vec2 uv)
 	return result;
 }
 
-#define NUM_OCTAVES 100
+#define NUM_OCTAVES 3
 
 float fbm(in vec2 st, float angle)
 {
 	float v = 0.0;
 	float a = 0.5;
-	vec2 shift = vec2(150.0);
+	vec2 shift = vec2(1.0);
 
 	mat2 rot = rotate(3.0);
 	for (int i = 0; i < NUM_OCTAVES; ++i)
@@ -64,12 +64,11 @@ float fbm(in vec2 st, float angle)
 
 void	main()
 {
-	vec2 st = vec2(500.0, 500.0);
 	vec2 Pos = pos;
-	Pos.x *= u_resolution.x / u_resolution.y;
-	float noise = noise(Pos * 6. + u_time);
-	float fractal = fbm(Pos * 6. + u_time, 0.5);
-	Pos *= rotate(angle + gl_InstanceID * noise);
-	gl_Position =  vec4(Pos + Offset, 0.0,1.0);
+	vec2 st = (vec2(100.0, 100.0) * rand(pos)).xy;
+	st.xy *= u_resolution.x / u_resolution.y;
+	float noise1 = noise(st * gl_InstanceID * (u_time / 100.));
+	float fractal = fbm(st, 0.0);
+//	Pos += gl_InstanceID;
+	gl_Position =  vec4(Pos * rotate(90.0) * noise1 + Offset, 0.0,1.0);
 }
-

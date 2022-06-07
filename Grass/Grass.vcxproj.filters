@@ -87,6 +87,9 @@
     <ClInclude Include="src\WireframePlane.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -137,10 +140,63 @@
     <None Include="shaders\noise_v.shader" />
     <None Include="shaders\noise_f.shader" />
     <None Include=".gitignore" />
+    <None Include="Debug\Grass.tlog\CL.command.1.tlog" />
+    <None Include="Debug\Grass.tlog\CL.read.1.tlog" />
+    <None Include="Debug\Grass.tlog\CL.write.1.tlog" />
+    <None Include="Debug\Grass.tlog\Grass.lastbuildstate" />
+    <None Include="Debug\Grass.tlog\link.11636.read.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.11636.write.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.11636-cvtres.read.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.11636-cvtres.write.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.11636-rc.read.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.11636-rc.write.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.command.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.read.1.tlog" />
+    <None Include="Debug\Grass.tlog\link.write.1.tlog" />
+    <None Include="Debug\Grass.tlog\link-cvtres.read.1.tlog" />
+    <None Include="Debug\Grass.tlog\link-cvtres.write.1.tlog" />
+    <None Include="Debug\Grass.tlog\link-rc.read.1.tlog" />
+    <None Include="Debug\Grass.tlog\link-rc.write.1.tlog" />
+    <None Include="Debug\Grass.tlog\unsuccessfulbuild" />
+    <None Include="Debug\Grass.exe.recipe" />
+    <None Include="Debug\vc142.idb" />
+    <None Include="Debug\vc142.pdb" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="dependencies\glfw\lib-vc2019\glfw3.lib" />
     <Library Include="dependencies\glfw\lib-vc2019\glfw3_mt.lib" />
     <Library Include="dependencies\glfw\lib-vc2019\glfw3dll.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\grass.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="textures\grass.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Debug\Wind.obj" />
+    <Object Include="Debug\glad.obj" />
+    <Object Include="Debug\GrassBlade.obj" />
+    <Object Include="Debug\GrassTerrasse.obj" />
+    <Object Include="Debug\imgui.obj" />
+    <Object Include="Debug\imgui_draw.obj" />
+    <Object Include="Debug\imgui_impl_glfw.obj" />
+    <Object Include="Debug\imgui_impl_opengl3.obj" />
+    <Object Include="Debug\imgui_tables.obj" />
+    <Object Include="Debug\imgui_widgets.obj" />
+    <Object Include="Debug\Quad.obj" />
+    <Object Include="Debug\ShaderCodeParser.obj" />
+    <Object Include="Debug\stb_image.obj" />
+    <Object Include="Debug\stb_vorbis.obj" />
+    <Object Include="Debug\stblib_test_companion.obj" />
+    <Object Include="Debug\test_ds.obj" />
+    <Object Include="Debug\main.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Debug\Grass.Build.CppClean.log" />
+    <Text Include="Debug\Grass.log" />
+    <Text Include="Debug\Grass.vcxproj.FileListAbsolute.txt" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 #include <utility>
 #include "Vector.h"
 
+// When you come back make sure to code the fucking perspective matrix !!!!!!!!!!!!!!!!!!!!!!!!
 template<typename T>
 class Matrix3x3
 {
@@ -21,7 +22,7 @@ public:
 };
 
 
-typedef struct ResultingVector
+struct ResultingVector
 {
 	int	x, y, z, w;
 };
@@ -41,6 +42,7 @@ public:
 	};
 	T	scalingmatrix[4][4];
 	T	transformmatrix[4][4];
+	T	perspectivematrix[4][4];
 	Matrix4x4<T>(T diagonalvalue)
 	{
 		this->diagonalvalue = diagonalvalue;
@@ -79,6 +81,17 @@ public:
 		vector.x += vec3._x;
 		vector.y += vec3._y;
 		vector.z += vec3._z;
+	}
+	void	PerspectiveProjection(Vector3<T> vec3)
+	{
+		// It's easy you know...
+		/*perspectivematrix = 
+		{
+			{1/r, 0,	  0,		0},
+			{0, 1/t,	  0,		0},
+			{0,   0, -2/f-n, -f+n/f-n},
+			{0,   0,	  0,		1}
+		}*/
 	}
 };
 
