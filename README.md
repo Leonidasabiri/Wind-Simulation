@@ -1,13 +1,18 @@
-<h1 align="center"> Grass-Simulation </h1>
+<h1 align="center"> Wind-Simulation </h1>
 
 # Still Under developement
-
+## To do:
+	- Implement perspective projection matrix
+	- Add blending and depth testing
+	- Add multitherading for rendering
+	- Add compute shader for parallel cpu/gpu computing
+	- Cubemaps for skybox after transforming stuff to 3D 
 ## [-About the project](#about-the-project)
 ## [-The approach](#the-approach)
 
 # about-the-project
 
-This is grass simulation written with c++ and based on the opengl API, it contains grass blades with segments that gets affected by gravity and wind force.
+This is a grass simulation written with c++ and based on the opengl API, it contains grass blades with segments that gets affected by gravity and wind force.
 
 # the-approach
 
@@ -120,7 +125,7 @@ float fbm(in vec2 st, float angle)
 	float v = 0.0;
 	float a = 0.5;
 	vec2 shift = vec2(150.0);
-	// Rotate to reduce axial bias
+	
 	mat2 rot =  rotate(3.0);
 	for (int i = 0; i < NUM_OCTAVES; ++i)
 	{
@@ -131,4 +136,4 @@ float fbm(in vec2 st, float angle)
 	return v;
 }
 ```
-Thanks to the book of shaders i knew how to make this.
+(Thanks to the book of shaders i knew how to make the noise.)
