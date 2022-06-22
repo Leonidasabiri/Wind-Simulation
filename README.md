@@ -137,3 +137,5 @@ float fbm(in vec2 st, float angle)
 }
 ```
 (Thanks to the book of shaders i knew how to make the noise.)
+- A note about the approach of writing the noise in shader :
+	. Maybe i should make the noise in the cpu so i can rotate the segements of each blade , but the thing is i should keep the gpu instancing.
