@@ -137,5 +137,10 @@ float fbm(in vec2 st, float angle)
 }
 ```
 (Thanks to the book of shaders i knew how to make the noise.)
+The grass instances after aplying the noise shader
+
+![Grass Noise](https://user-images.githubusercontent.com/54768823/177995706-4d557373-4d80-4399-ab1f-2f5d170cdae5.PNG)
+
+
 - A note about the approach of writing the noise in shader :
 	. Maybe i should make the noise in the cpu so i can rotate the segements of each blade , but the thing is i should keep the gpu instancing.
