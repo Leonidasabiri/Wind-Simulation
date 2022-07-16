@@ -2,7 +2,6 @@
 #include <utility>
 #include "Vector.h"
 
-// When you come back make sure to code the fucking perspective matrix !!!!!!!!!!!!!!!!!!!!!!!!
 template<typename T>
 class Matrix3x3
 {
@@ -18,9 +17,7 @@ public:
 	// Model
 	// View
 	// Scaling matrix
-	// Rotation
 };
-
 
 struct ResultingVector
 {

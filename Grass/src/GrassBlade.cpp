@@ -4,8 +4,8 @@
 
 GrassBlade::GrassBlade(unsigned int shaderID, float size, float x, float y)
 {
-	this->angle = static_cast<float>(rand())/static_cast<float>(RAND_MAX / 10.8f);
-	//this->angle = 20.0f;
+	//this->angle = static_cast<float>(rand())/static_cast<float>(RAND_MAX / 10.8f);
+	this->angle = 20.0f;
 	this->_size = size;
 	this->_x = x;
 	this->_y = y;
@@ -70,9 +70,9 @@ void	GrassBlade::grassSway(float time)
 	wind.applyingNoise(0, 0);
 
 	double r = rand() % 5;
-	wind.velocity *= r;
+	wind.velocity *= sin(time);
 
-	Seg		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f, wind.velocity/10.0f)
+	Segement		headSegm = segementrotater(0.05f, height * 9.0f, 0.0f, 0.0f, wind.velocity/10.0f)
 	,
 	segment1 = segementrotater(width / 1.9f, height * 5.0f, -width / 1.9f, height * 5.0f,
 		wind.velocity / 20.0f)

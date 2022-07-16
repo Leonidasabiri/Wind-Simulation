@@ -39,7 +39,7 @@ float noise(in vec2 uv)
 
 	vec2 u = y * y * (2. - 1. * y);
 	float result = mix(a, b, u.x) + (c - a)
-		* u.y * (1.0 - u.x) + (d - b)
+		* u.x * (1.0 - u.y) + (d - b)
 		* u.x * u.y;
 	return result;
 }
@@ -67,8 +67,8 @@ void	main()
 	vec2 Pos = pos;
 	vec2 st = (vec2(100.0, 100.0) * rand(pos)).xy;
 	st.xy *= u_resolution.x / u_resolution.y;
-	float noise1 = noise(st * gl_InstanceID * (u_time / 100.));
+	float noise1 = noise(st * gl_InstanceID);
 	float fractal = fbm(st, 0.0);
 //	Pos += gl_InstanceID;
-	gl_Position =  vec4(Pos * rotate(90.0) * noise1 + Offset, 0.0,1.0);
+	gl_Position =  vec4(Pos + Offset, 0.0,1.0);
 }

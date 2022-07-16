@@ -15,7 +15,8 @@ GrassTerrasse::GrassTerrasse(int grassbladesnumber, int shaderID)
 			Vector2<float>	pos;
 			pos._x = -0.7 + i / 40.0f;
 			pos._y = -0.7 + j / 40.0f;
-			vec[ind++] = pos;
+			vec[ind] = pos;
+			ind++;
 		}
 	}
 	glGenBuffers(1, &instanceVBO);

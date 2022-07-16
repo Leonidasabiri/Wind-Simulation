@@ -6,7 +6,7 @@
 #include "Quad.h"
 #include "Math.h"
 #include "GUIEditor.h"
-		
+
 int main()
 {		
 	int	h = 900;
@@ -14,8 +14,8 @@ int main()
 		
 	Window	win("Grass", w, h);
 	ShaderParser	grassShader("shaders/grass_v.shader", "shaders/grass_f.shader");
-	ShaderParser	noiseShader("shaders/noise_v.shader", "shaders/noise_f.shader");
-	Quad			quad(Vector2<float>(13, 13), noiseShader.ShaderID());
+	ShaderParser	noiseShader("shaders/q_v.shader", "shaders/q_f.shader");
+	Quad			quad(Vector2<float>(2, 4), noiseShader.ShaderID());
 	GrassTerrasse	grassterrasse(100, grassShader.ShaderID());
 
 	float width = 0.04f, height = 0.08f;
@@ -60,9 +60,9 @@ int main()
 
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-		//quad.Render(time);
-		grassterrasse.renderterrasse(static_cast<float>(time));
+		quad.Render(time);
 		
+		//grassterrasse.renderterrasse(static_cast<float>(time));		
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		glfwGetCursorPos(win.window, &x, &y);

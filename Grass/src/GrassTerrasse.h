@@ -9,6 +9,7 @@ private:
 	int					_shaderID;
 	int					_grassbladesnumber = 0;
 	Vector2<float>		*vec = new Vector2<float>[400000];
+	Matrix2x2<float>	*rot= new Matrix2x2<float>[400000];
 	GrassBlade			*grassblades;
 public:
 	GrassTerrasse();
